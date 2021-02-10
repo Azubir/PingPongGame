@@ -20,10 +20,19 @@ public class Ball extends Rectangle{
             setXDirection(randomXDirection * initialSpeed);
         }
 
+        if(randomXDirection == 1) {
+            randomXDirection++;
+            setXDirection(randomXDirection * initialSpeed);
+        }
+
             int randomYDirection = random.nextInt(2);
             if(randomYDirection == 0){
                 randomYDirection--;
                 setYDirection(randomYDirection * initialSpeed);
+        }
+        if(randomYDirection == 1){
+            randomYDirection++;
+            setYDirection(randomYDirection * initialSpeed);
         }
     }
 
