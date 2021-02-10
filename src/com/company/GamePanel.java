@@ -11,8 +11,8 @@ public class GamePanel extends JPanel implements Runnable{
     static final int Game_Height = (int)(Game_Width * (0.5555));
     static final Dimension Screen_Size = new Dimension(Game_Width,Game_Height);
     static final int BALL_DIAMETER =20;
-    static final int PADDLE_WIDTH =50;
-    static final int PADDLE_HEIGHT =50;
+    static final int PADDLE_WIDTH =25;
+    static final int PADDLE_HEIGHT =100;
     Thread gameThread;
     Image image;
     Graphics graphics;
@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements Runnable{
         this.setPreferredSize(Screen_Size);
 
         gameThread = new Thread(this);
-        gameThread.start();
+       // gameThread.start();
     }
 
     public void newBall(){
@@ -148,6 +148,9 @@ public class GamePanel extends JPanel implements Runnable{
         public void keyPressed(KeyEvent e){
             paddle1.keyPressed(e);
             paddle2.keyPressed(e);
+            if(e.getKeyCode() == KeyEvent.VK_SPACE){
+                gameThread.start();
+            }
         }
 
         public void keyReleased(KeyEvent e){
