@@ -3,6 +3,7 @@ package com.company;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
 public class GamePanel extends JPanel implements Runnable{
@@ -21,7 +22,6 @@ public class GamePanel extends JPanel implements Runnable{
     Paddle paddle2;
     Ball ball;
     Score score;
-
 
     public GamePanel(){
         newPaddles();
@@ -151,7 +151,11 @@ public class GamePanel extends JPanel implements Runnable{
             if(e.getKeyCode() == KeyEvent.VK_SPACE){
                 gameThread.start();
             }
+
+
+
         }
+
 
         public void keyReleased(KeyEvent e){
             paddle2.keyReleased(e);
