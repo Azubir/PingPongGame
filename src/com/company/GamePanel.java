@@ -24,6 +24,7 @@ public class GamePanel extends JPanel implements Runnable{
     Score score;
 
     public GamePanel(){
+
         newPaddles();
         newBall();
         score = new Score(Game_Width,Game_Height);
@@ -43,8 +44,8 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
     public void newPaddles(){
-        paddle1 = new Paddle(0,(Game_Height/2) - (PADDLE_HEIGHT/2), PADDLE_WIDTH,PADDLE_HEIGHT,1);
-        paddle2 = new Paddle((Game_Width - PADDLE_WIDTH),(Game_Height/2) - (PADDLE_HEIGHT/2), PADDLE_WIDTH,PADDLE_HEIGHT,2);
+        paddle1 = new Paddle(10,(Game_Height/2) - (PADDLE_HEIGHT/2), PADDLE_WIDTH,PADDLE_HEIGHT,1);
+        paddle2 = new Paddle((Game_Width - PADDLE_WIDTH) - 10,(Game_Height/2) - (PADDLE_HEIGHT/2), PADDLE_WIDTH,PADDLE_HEIGHT,2);
     }
 
     public void paint(Graphics g){
@@ -163,4 +164,16 @@ public class GamePanel extends JPanel implements Runnable{
         }
     }
 
+}
+
+class ImagePanel extends JPanel {
+    private Image image;
+    public ImagePanel(Image image) {
+        this.image = image;
+    }
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(image, 1000, 555, this);
+    }
 }

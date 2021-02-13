@@ -76,9 +76,9 @@ public class Paddle extends Rectangle{
 
     public void draw(Graphics g){
         if(id == 1)
-            g.setColor(Color.BLUE);
-        else g.setColor(Color.RED);
-        g.fillRect(x,y,width,height);
+            g.setColor(Color.YELLOW);
+        else g.setColor(Color.WHITE);
+        g.fillRoundRect(x,y,width,height,20,20);
     }
 
 }
