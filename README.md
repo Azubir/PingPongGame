@@ -20,5 +20,5 @@ Format: ![Alt Text](url)
 
 ## Playing the game
     Press the space bar to start the game 🏓 
-    w,s for blue player 💎
-    up,down keys for red player 🧯
+    w,s for yellow player 
+    up,down keys for white player 
